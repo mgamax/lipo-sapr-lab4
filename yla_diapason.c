@@ -21,15 +21,15 @@ void put_number_in_diapason(yla_int_type **prog_ptr, yla_int_type subprog_start_
 	// End local vars section
 	
 	// while (i < end)
-	/*while_start(61)*/
-	compliance_table_set_addr(compliance, 0x0061, prog_count);
+	/*while_start(91)*/
+	compliance_table_set_addr(compliance, 0x0091, prog_count);
 	put_commd(prog_ptr, CDUP);						prog_count++;
 	put_value(prog_ptr, 0x0001);					prog_count += 2;
 	put_commd(prog_ptr, CLOAD);						prog_count++;
 	put_value(prog_ptr, i);							prog_count += 2;
 	
 	put_commd(prog_ptr, CJG);						prog_count++;
-	put_value(prog_ptr, 0x0068);					prog_count += 2;	/*ret_no(68)*/
+	put_value(prog_ptr, 0x0098);					prog_count += 2;	/*ret_no(98)*/
 	// {
 	put_commd(prog_ptr, CSTK);						prog_count++;
 	put_value(prog_ptr, 0x0002);					prog_count += 2;
@@ -42,7 +42,7 @@ void put_number_in_diapason(yla_int_type **prog_ptr, yla_int_type subprog_start_
 	put_commd(prog_ptr, CCMP);						prog_count++;
 	// { CJNZ yes
 	put_commd(prog_ptr, CJNZ);						prog_count++;
-	put_value(prog_ptr, 0x0067);					prog_count += 2;	/*ret_yes(67)*/
+	put_value(prog_ptr, 0x0097);					prog_count += 2;	/*ret_yes(97)*/
 	
 	// }
 	put_commd(prog_ptr, CSTK);						prog_count++;
@@ -59,28 +59,28 @@ void put_number_in_diapason(yla_int_type **prog_ptr, yla_int_type subprog_start_
 	
 	// } (while)
 	put_commd(prog_ptr, CJMP);						prog_count++;
-	put_value(prog_ptr, 0x0061);					prog_count += 2;	/*while_start(61)*/
+	put_value(prog_ptr, 0x0091);					prog_count += 2;	/*while_start(91)*/
 	
-	/*ret_yes(67)*/
-	compliance_table_set_addr(compliance, 0x0067, prog_count);
+	/*ret_yes(97)*/
+	compliance_table_set_addr(compliance, 0x0097, prog_count);
 	put_commd(prog_ptr, CSTK);						prog_count++;
 	put_value(prog_ptr, 0x0001);					prog_count += 2;
 	put_commd(prog_ptr, CPUSH);						prog_count++;
 	put_value(prog_ptr, 0x0001);					prog_count += 2;
 	put_commd(prog_ptr, CJMP);						prog_count++;
-	put_value(prog_ptr, 0x0069);					prog_count += 2;	/*ret(99)*/
+	put_value(prog_ptr, 0x0099);					prog_count += 2;	/*ret(99)*/
 	
 	/*ret_no(98)*/
-	compliance_table_set_addr(compliance, 0x0068, prog_count);
+	compliance_table_set_addr(compliance, 0x0098, prog_count);
 	put_commd(prog_ptr, CSTK);						prog_count++;
 	put_value(prog_ptr, 0x0002);					prog_count += 2;
 	put_commd(prog_ptr, CPUSH);						prog_count++;
 	put_value(prog_ptr, 0x0000);					prog_count += 2;
 	put_commd(prog_ptr, CJMP);						prog_count++;
-	put_value(prog_ptr, 0x0069);					prog_count += 2;	/*ret(69)*/
+	put_value(prog_ptr, 0x0099);					prog_count += 2;	/*ret(99)*/
 	
-	/*ret(69)*/
-	compliance_table_set_addr(compliance, 0x0069, prog_count);
+	/*ret(99)*/
+	compliance_table_set_addr(compliance, 0x0099, prog_count);
 	put_commd(prog_ptr, CLOAD);						prog_count++;
 	put_value(prog_ptr, ret);						prog_count += 2;
 	put_commd(prog_ptr, CRET);						prog_count++;
@@ -166,12 +166,12 @@ void put_diap_number_pre(yla_int_type **prog_ptr, yla_int_type subprog_start_add
 	// Delete multiplicator from deep of stack
 	
 	// for (i = 3; i > 0; i--)
-	/*offset_diapason(71)*/
-	compliance_table_set_addr(compliance, 0x0071, prog_count);
+	/*offset_diapason(81)*/
+	compliance_table_set_addr(compliance, 0x0081, prog_count);
 	put_commd(prog_ptr, CLOAD);						prog_count++;
 	put_value(prog_ptr, i);							prog_count += 2;
 	put_commd(prog_ptr, CJZ);						prog_count++;
-	put_value(prog_ptr, 0x0079);					prog_count += 2;	/*ret(79)*/
+	put_value(prog_ptr, 0x0089);					prog_count += 2;	/*ret(89)*/
 	// {
 	put_commd(prog_ptr, CSTK);						prog_count++;
 	put_value(prog_ptr, 0x0001);					prog_count += 2;
@@ -212,11 +212,11 @@ void put_diap_number_pre(yla_int_type **prog_ptr, yla_int_type subprog_start_add
 	
 	// }
 	put_commd(prog_ptr, CJMP);						prog_count++;
-	put_value(prog_ptr, 0x0071);					prog_count += 2;	/*offset_diapason(71)*/
+	put_value(prog_ptr, 0x0081);					prog_count += 2;	/*offset_diapason(81)*/
 	
 	// Ret subprogram
-	/*ret(79)*/
-	compliance_table_set_addr(compliance, 0x0079, prog_count);
+	/*ret(89)*/
+	compliance_table_set_addr(compliance, 0x0089, prog_count);
 	put_commd(prog_ptr, CSTK);						prog_count++;
 	put_value(prog_ptr, 0x0002);					prog_count += 2;
 	put_commd(prog_ptr, CLOAD);						prog_count++;
