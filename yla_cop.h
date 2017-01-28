@@ -34,7 +34,6 @@ codes of operations
 #define CGDEEP	0x0b
 #define CGSTK	0x0c
 
-#define CTEST	0x05
 #define CCMP	0x06
 
 #define CLOAD	0x08
@@ -45,8 +44,6 @@ codes of operations
 #define CMULT	0x12
 #define CDIV	0x13
 #define CNEG	0x14
-
-#define CITOA	0x15
 
 #define CJMP	0x20
 #define CJZ		0x21
