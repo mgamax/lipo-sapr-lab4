@@ -35,6 +35,7 @@ codes of operations
 #define CGSTK	0x0c
 
 #define CCMP	0x06
+#define CTEST   0x07
 
 #define CLOAD	0x08
 #define CSAVE	0x09
