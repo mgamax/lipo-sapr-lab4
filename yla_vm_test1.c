@@ -285,12 +285,12 @@ static test_diap_number_post()
 	yla_int_type *prog_counter_ptr = prog_counter;
 	
 	compliance_table link_table;
-	compliance_table_init(&link_table, 40);
+	compliance_table_init(&link_table, 25);
 	
 	yla_int_type global_var[2];
 	
-	global_var[0] = 0x0000;		// Ret subprogram 
-	global_var[1] = 0x0001;		// Iterator for diapason
+	global_var[0] = 0x0000;		
+	global_var[1] = 0x0001;	
 	
 	put_header(&prog_ptr, stack_size, vartable_size, prg_size);
 	
@@ -304,11 +304,10 @@ static test_diap_number_post()
 	put_commd(&prog_ptr, CPUSH);				prog_counter++;
 	put_value(&prog_ptr, 0x0008);				prog_counter += 2;
 	
-	// Multiplicator value
+	// 8 ?
 	put_commd(&prog_ptr, CPUSH);				prog_counter++;
 	put_value(&prog_ptr, 0x0008);				prog_counter += 2;
 	
-	// Call multiplicator
 	put_commd(&prog_ptr, CALO);					prog_counter++;
 	put_value(&prog_ptr, 0x0070);				prog_counter += 2;
 	
